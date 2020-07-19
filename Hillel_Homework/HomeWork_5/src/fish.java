@@ -9,4 +9,9 @@ public class fish extends Animal {
         System.out.println(".......");
     }
 
+    @Override
+    protected void eat() {
+        System.out.println(".......");
+    }
+
 }

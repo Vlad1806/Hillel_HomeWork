@@ -1,10 +1,9 @@
 public class RunAnimal {
     public static void main(String[] args) {
 
-        fish fish = new fish(3,1,0.0001f,"Blue");
+        fish fish = new fish(3,1,0.0001f,"Blue",false);
         System.out.print("Fish : ");
         fish.voice();
-        fish.eat();
         Dog dog = new Dog(4,2, 1.2f,"Black","Puppy",true);
         System.out.print("Dog : ");
         dog.voice();
@@ -40,3 +39,4 @@ public class RunAnimal {
         guide_dog.eat();
     }
 }
+

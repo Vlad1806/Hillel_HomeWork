@@ -10,4 +10,9 @@ public class HomeAnimal extends Animal{
     protected void voice(){
         System.out.println("Hello,my name is " + name);
     }
+
+    @Override
+    protected void eat() {
+        System.out.println("Feed me");
+    }
 }

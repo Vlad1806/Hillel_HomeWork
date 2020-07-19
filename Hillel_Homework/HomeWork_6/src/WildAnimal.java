@@ -1,13 +1,14 @@
-public class WildAnimal extends Animal {
+public class WildAnimal extends Animal implements AnimalDo {
 
     protected boolean isPredator;
 
-    protected WildAnimal(int id, int age, float weight, String color, boolean isPredator) {
+    public WildAnimal(int id, int age, float weight, String color, boolean isPredator) {
+        super(id, age, weight, color);
         this.isPredator = isPredator;
     }
 
     @Override
-    protected void voice() {
+    public void voice() {
         if (isPredator == true) {
             System.out.println("Hello,I am a wild animal and I am angry");
         }
@@ -17,7 +18,7 @@ public class WildAnimal extends Animal {
     }
 
     @Override
-    protected void eat() {
+    public void eat() {
         if (isPredator == true) {
             System.out.println("I'll eat you");
         }
@@ -26,6 +27,3 @@ public class WildAnimal extends Animal {
         }
     }
 }
-
-
-

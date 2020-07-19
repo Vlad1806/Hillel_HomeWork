@@ -5,4 +5,5 @@ public abstract class Animal {
     protected String color;
 
     protected abstract void voice();
+    protected abstract void eat();
 }
