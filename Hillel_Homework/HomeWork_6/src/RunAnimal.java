@@ -4,6 +4,7 @@ public class RunAnimal {
         fish fish = new fish(3,1,0.0001f,"Blue",false);
         System.out.print("Fish : ");
         fish.voice();
+        fish.eat();
         Dog dog = new Dog(4,2, 1.2f,"Black","Puppy",true);
         System.out.print("Dog : ");
         dog.voice();
