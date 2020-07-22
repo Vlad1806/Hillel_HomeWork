@@ -2,8 +2,9 @@ public class Collection implements CollectionDo{
     private String[] str = new String[10];
 
     public String getStr(int index) {
-        return str[index];
+        return str[index - 1];
     }
+
     public int length(){
        return str.length;
     }

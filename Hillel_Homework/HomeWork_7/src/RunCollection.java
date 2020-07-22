@@ -29,6 +29,7 @@ public class RunCollection {
         System.out.println(" ");
         list.delete(1);
         list.print();
-
+        System.out.println(" ");
+        System.out.println(list.getStr(3));
     }
 }
