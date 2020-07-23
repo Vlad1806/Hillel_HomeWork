@@ -33,6 +33,9 @@ public class Collection implements CollectionDo{
         index -= 1;
         String[] oldstr = new String[str.length];
         oldstr = str;
+
+        if (index < 0 || index > oldstr.length) return;
+
         String[] newstr = new String[oldstr.length + 1];
         if (oldstr[index] == null) {
             add(string);

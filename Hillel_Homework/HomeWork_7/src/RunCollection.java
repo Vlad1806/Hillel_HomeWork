@@ -16,10 +16,10 @@ public class RunCollection {
         list.add("10");
         list.print();
         System.out.println(" ");
-        list.add(3,"qwerty");
+        list.add(73,"qwerty");
         list.print();
         System.out.println(" ");
-        list.add(10,"qwerty2");
+        list.add(100,"qwerty2");
         list.print();
         System.out.println(" ");
         list.delete("6");
