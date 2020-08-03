@@ -63,7 +63,8 @@ public class RunList {
         System.out.println("List contains (gg) : " + list.contains("gg"));
         System.out.println("List contains (b) : " + list.contains("c"));
 
-
+        list.add(null);
+        list.displayList();
         System.out.println("Trim: " + list.trim());
         list.displayList();
         System.out.println("Clear:");
