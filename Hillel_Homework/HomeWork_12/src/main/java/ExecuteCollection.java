@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Objects;
 
 public class ExecuteCollection implements Col {
 
@@ -13,11 +10,12 @@ public class ExecuteCollection implements Col {
     }
 
     public void print() {
-        if (count == 0) {
+        if (count == 0){
             System.out.println("Empty!!!");
-        } else {
+        }
+        else {
             for (int i = 0; i < count; i++) {
-                if (list[i] == null) {
+                if (list[i] == null){
                     break;
                 }
                 System.out.print(list[i] + " ");
@@ -27,7 +25,7 @@ public class ExecuteCollection implements Col {
     }
 
     private Object[] newlist(Object[] list) {
-        if (Objects.isNull(list))
+        if (list == null)
             return null;
         Object[] newList = new Object[list.length * 3 / 2 + 1];
         int i = 0;
@@ -38,19 +36,18 @@ public class ExecuteCollection implements Col {
         return newList;
     }
 
-    @Override
     public boolean add(Object o) {
 
-        if (count == list.length) {
+        if (count == list.length){
             this.list = newlist(list);
             list[count++] = o;
-        } else {
+        }
+        else {
             list[count++] = o;
         }
         return true;
     }
 
-    @Override
     public boolean add(int index, Object o) {
         index--;
         Object[] oldstr = new String[list.length];
@@ -61,7 +58,8 @@ public class ExecuteCollection implements Col {
         Object[] newstr = new String[oldstr.length + 1];
         if (oldstr[index] == null) {
             add(o);
-        } else {
+        }
+        else {
             for (int i = 0, j = 0; i < count; i++, j++) {
                 if (i == index) {
                     newstr[i + 1] = oldstr[index];
@@ -77,7 +75,12 @@ public class ExecuteCollection implements Col {
     }
 
 
-    private Object[] copy1(int index) {
+    private Object[] copy1(int index){
+        if (index == 0) {
+            index = 0;
+        }else{
+            index--;
+        }
         Object[] oldstr = new String[list.length];
         oldstr = list;
         String[] newstr = new String[oldstr.length - 1];
@@ -89,34 +92,35 @@ public class ExecuteCollection implements Col {
     }
 
     public boolean delete(int index) {
-        index--;
-        if (index > list.length || index < 0) return false;
+        if (index > count || index < 0) return false;
         copy1(index);
         count--;
         return true;
     }
 
-    @Override
     public boolean delete(Object o) {
         if (o == null) return false;
+        int temp = count;
         for (int i = 0; i < list.length; i++) {
+            if (list[i] == null) break;
             if (list[i].equals(o))
                 delete(i);
         }
-        return true;
+        return count < temp;
     }
 
-    @Override
+
     public Object get(int index) {
         if (index >= list.length || index < 0)
             return "-1";
         return list[index];
     }
 
-    @Override
+
     public boolean contain(Object o) {
         if (list.length == 0) return false;
         for (int i = 0; i < list.length; i++) {
+            if (list[i] == null) return false;
             if (list[i].equals(o)) {
                 return true;
             }
@@ -124,7 +128,7 @@ public class ExecuteCollection implements Col {
         return false;
     }
 
-    @Override
+
     public boolean equals(Col str) {
         if (this == str) {
             return true;
@@ -137,6 +141,7 @@ public class ExecuteCollection implements Col {
         int i = 0, count1 = 0;
 
         while (i < this.size()) {
+            //if (this.list == null)return false;
             if (this.list[i].equals(str.get(i))) {
                 count1++;
             }
@@ -149,16 +154,13 @@ public class ExecuteCollection implements Col {
         return false;
     }
 
-    @Override
     public boolean clear() {
-        if (list.length == 0) return true;
-
+        if (count == 0 && list == null) return false;
         list = null;
         count = 0;
         return true;
     }
 
-    @Override
     public int size() {
         return count;
     }

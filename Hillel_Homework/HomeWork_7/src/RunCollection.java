@@ -1,6 +1,6 @@
-
 public class RunCollection {
     public static void main(String[] args) {
+
         Collection list = new Collection();
 
         System.out.println(" ");
@@ -16,10 +16,10 @@ public class RunCollection {
         list.add("10");
         list.print();
         System.out.println(" ");
-        list.add(73,"qwerty");
+        list.add(7,"qwerty");
         list.print();
         System.out.println(" ");
-        list.add(100,"qwerty2");
+        list.add(1,"qwerty2");
         list.print();
         System.out.println(" ");
         list.delete("6");

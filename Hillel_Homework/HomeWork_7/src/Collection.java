@@ -11,7 +11,7 @@ public class Collection implements CollectionDo{
 
     public void print(){
         for (String i:str) {
-            System.out.println(i);
+            System.out.print(i + " ");
         }
     }
     @Override
