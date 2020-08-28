@@ -66,11 +66,5 @@ public class RunCollect {
         System.out.println("List 3 clear : " + ex3.clear());
         System.out.print("List 3 is: ");
         ex3.print();
-
-
-        ExecuteCollection ex4 = new ExecuteCollection();
-        ex4.add(5,2);
-        ex4.add(3);
-        ex4.print();
     }
 }
