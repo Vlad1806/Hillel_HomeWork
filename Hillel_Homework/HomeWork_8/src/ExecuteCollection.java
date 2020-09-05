@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class ExecuteCollection implements Col {
 
-    public Object[] list;
+    private Object[] list;
     private int count;
 
 
