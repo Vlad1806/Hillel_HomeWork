@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class ExecuteCollection implements Col {
 
-    private Object[] list;
+    public Object[] list;
     private int count;
 
 
@@ -16,7 +16,7 @@ public class ExecuteCollection implements Col {
         if (count == 0) {
             System.out.println("Empty!!!");
         } else {
-            for (int i = 0; i < count; i++) {
+            for (int i = 0; i < list.length; i++) {
                 if (list[i] == null) {
                     break;
                 }
@@ -27,9 +27,8 @@ public class ExecuteCollection implements Col {
     }
 
     private Object[] newlist(Object[] list) {
-        if (Objects.isNull(list))
-            return null;
-        Object[] newList = new Object[list.length * 3 / 2 + 1];
+        if (Objects.isNull(list)) return null;
+        Object[] newList = new Object[list.length + 1];
         int i = 0;
         for (Object s : list) {
             newList[i] = s;
@@ -40,7 +39,6 @@ public class ExecuteCollection implements Col {
 
     @Override
     public boolean add(Object o) {
-
         if (count == list.length) {
             this.list = newlist(list);
             list[count++] = o;
@@ -49,49 +47,37 @@ public class ExecuteCollection implements Col {
         }
         return true;
     }
-
-    @Override
+        @Override
     public boolean add(int index, Object o) {
+        if (index <= 0 || index > list.length || Objects.isNull(o)) return false;
         index--;
-        Object[] oldstr = new String[list.length];
-        oldstr = list;
-
-        if (index < 0 || index > oldstr.length) return false;
-
-        Object[] newstr = new String[oldstr.length + 1];
-        if (oldstr[index] == null) {
+        if (list[index] == null) {
             add(o);
         } else {
-            for (int i = 0, j = 0; i < count; i++, j++) {
-                if (i == index) {
-                    newstr[i + 1] = oldstr[index];
-                    newstr[i] = o;
-                    j++;
-                } else {
-                    newstr[j] = oldstr[i];
+                this.list = newlist(list);
+                for (int j = count - 1; j >= index; j--) {
+                    list[j + 1] = list[j];
                 }
+                list[index] = o;
+                count++;
             }
-            list = newstr;
-        }
         return true;
     }
 
+    private Object[] copy(int index) {
 
-    private Object[] copy1(int index) {
-        Object[] oldstr = new String[list.length];
-        oldstr = list;
-        String[] newstr = new String[oldstr.length - 1];
-        System.arraycopy(oldstr, 0, newstr, 0, index);
+        Object[] newstr = new Object[list.length - 1];
+        System.arraycopy(list, 0, newstr, 0, index);
 
-        System.arraycopy(oldstr, index + 1, newstr, index, oldstr.length - index - 1);
+        System.arraycopy(list, index + 1, newstr, index, list.length - index - 1);
         list = newstr;
         return list;
     }
 
     public boolean delete(int index) {
         index--;
-        if (index > list.length || index < 0) return false;
-        copy1(index);
+        if (index >= count || index < 0) return false;
+        copy(index);
         count--;
         return true;
     }
@@ -99,16 +85,19 @@ public class ExecuteCollection implements Col {
     @Override
     public boolean delete(Object o) {
         if (o == null) return false;
-        for (int i = 0; i < list.length; i++) {
-            if (list[i].equals(o))
+        for (int i = 0; i < count; i++) {
+            if (list[i].equals(o)) {
+                i++;
                 delete(i);
+            }
         }
         return true;
     }
 
     @Override
     public Object get(int index) {
-        if (index >= list.length || index < 0)
+        index--;
+        if (index >= count || index < 0)
             return "-1";
         return list[index];
     }
@@ -116,7 +105,7 @@ public class ExecuteCollection implements Col {
     @Override
     public boolean contain(Object o) {
         if (list.length == 0) return false;
-        for (int i = 0; i < list.length; i++) {
+        for (int i = 0; i < count; i++) {
             if (list[i].equals(o)) {
                 return true;
             }
@@ -129,20 +118,16 @@ public class ExecuteCollection implements Col {
         if (this == str) {
             return true;
         }
-
         if (this.size() != str.size()) {
             return false;
         }
-
         int i = 0, count1 = 0;
-
         while (i < this.size()) {
-            if (this.list[i].equals(str.get(i))) {
+            if (this.list[i].equals(str.get(i + 1))) {
                 count1++;
             }
             i++;
         }
-
         if (count1 == this.size()) {
             return true;
         }
@@ -157,7 +142,6 @@ public class ExecuteCollection implements Col {
         count = 0;
         return true;
     }
-
     @Override
     public int size() {
         return count;

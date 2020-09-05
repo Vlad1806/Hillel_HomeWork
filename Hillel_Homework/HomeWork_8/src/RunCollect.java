@@ -1,12 +1,6 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.SortedMap;
 
 public class RunCollect {
-
     public static void main(String[] args) {
-
         ExecuteCollection ex = new ExecuteCollection();
         ex.add("1");
         ex.add("2");
@@ -18,18 +12,26 @@ public class RunCollect {
         ex.add("8");
         ex.add("9");
         ex.add("10");
+        ex.print();
+        System.out.println("Size : " + ex.size());
+        System.out.print("Add index 10 (100): ");
+        ex.add(10, "100");
+        ex.print();
+        System.out.println("Size : " + ex.size());
 
+        System.out.print("Delete index 10 : ");
+        ex.delete(10);
         ex.print();
-        System.out.print("Insert in position 9 value 22 : " + ex.add(9, "22"));
-        System.out.println("");
+        System.out.println("Size : " + ex.size());
+        System.out.print("Delete 5 : ");
+        ex.delete("5");
         ex.print();
-        System.out.print("Delete value 22: " + ex.delete("22"));
-        System.out.println("");
-        ex.print();
-        System.out.println("Delete by index 1 : " + ex.delete(1));
-        ex.print();
-        System.out.print("Size: " + ex.size());
+        System.out.println("Size : " + ex.size());
 
+        System.out.println("Index 5 : " + ex.get(5));
+
+        System.out.println("Contain 6 : " + ex.contain("6"));
+        System.out.println("Contain 99 : " + ex.contain("99"));
         System.out.println("");
         ExecuteCollection ex2 = new ExecuteCollection();
         ex2.add("1");
@@ -43,28 +45,21 @@ public class RunCollect {
         ex2.add("9");
         ex2.add("10");
 
-        ExecuteCollection ex3= new ExecuteCollection();
-        ex3.add("1");
-        ex3.add("2");
-        ex3.add("3");
-        ex3.add("4");
-        ex3.add("5");
-        ex3.add("6");
-        ex3.add("7");
-        ex3.add("8");
-        ex3.add("9");
-        ex3.add("10");
-        System.out.println("List 2 : ");
+        System.out.print("ex : ");
+        ex.print();
+        System.out.print("ex2 : ");
         ex2.print();
-        System.out.println("List 3 : ");
-        ex3.print();
-        System.out.println("");
-        System.out.println("Second List 2 == List 3 : " + ex2.equals(ex3));
-        System.out.println("Second list 2 have 11 : " + ex2.contain("11"));
-        System.out.println("Second list 2 have 9 : " + ex2.contain("9"));
+        System.out.println("ex == ex2 : " + ex.equals(ex2));
+        ex2.delete("5");
 
-        System.out.println("List 3 clear : " + ex3.clear());
-        System.out.print("List 3 is: ");
-        ex3.print();
+        System.out.print("ex2 : ");
+        ex2.print();
+        System.out.println("ex == ex2 : " + ex.equals(ex2));
+        ex.equals(ex2);
+
+
+        System.out.println("Clear : " + ex.clear());
+        ex.print();
+        System.out.println("Size : " + ex.size());
     }
 }
