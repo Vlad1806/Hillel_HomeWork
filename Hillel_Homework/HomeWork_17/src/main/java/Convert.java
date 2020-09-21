@@ -1,3 +1,5 @@
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.google.gson.Gson;
@@ -33,24 +35,15 @@ public class Convert {
     }
 
     private void YamltoJson(){
-        file = new File("/Users/vlad/Desktop/Hillel_HomeWork/Hillel_Homework/HomeWork_17/src/main/resources/Output/toJSON.json");
+        file = new File("Hillel_Homework/HomeWork_17/src/main/resources/Output/toJSON.json");
         Yaml yaml = new Yaml(new Constructor(Customer.class));
         String yamlStr = readToString(path);
         Customer customer = yaml.load(yamlStr);
         ObjectMapper mapper = new ObjectMapper();
-        try {
-            mapper.writeValue(file, customer);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        writeToFile(mapper,customer);
     }
 
-    private void JsontoYaml(){
-        file = new File("/Users/vlad/Desktop/Hillel_HomeWork/Hillel_Homework/HomeWork_17/src/main/resources/Output/toYAML.yaml");
-        Gson gson = new Gson();
-        String jsonStr = readToString(path);
-        Customer customer = gson.fromJson(jsonStr,Customer.class);
-        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+    private void writeToFile(ObjectMapper mapper,Customer customer){
         try {
             mapper.writeValue(file,customer);
         } catch (IOException e) {
@@ -58,8 +51,18 @@ public class Convert {
         }
     }
 
+    private void JsontoYaml(){
+        file = new File("Hillel_Homework/HomeWork_17/src/main/resources/Output/toYAML.yaml");
+        Gson gson = new Gson();
+        String jsonStr = readToString(path);
+        Customer customer = gson.fromJson(jsonStr,Customer.class);
+        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+        writeToFile(mapper,customer);
+    }
 
-    public static String readToString(String filePath) {
+
+
+    private static String readToString(String filePath) {
 
         StringBuilder contentBuilder = new StringBuilder();
         try (Stream<String> stream = Files.lines( Paths.get(filePath), StandardCharsets.UTF_8)) {
