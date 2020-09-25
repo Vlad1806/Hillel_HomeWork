@@ -1,9 +1,5 @@
 
 Player oleg has played games: 5
-Your results :
-Wins: 2 Losses: 1  Ties: 
-
-Player oleg has played games: 5
 Player oleg has played games: 5
 Your results :
 Wins: 0 Losses: 3  Ties: 2 Percent: 0.2
