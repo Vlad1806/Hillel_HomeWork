@@ -32,7 +32,7 @@ public class WriteRead {
         try (Stream<String> stream = Files.lines(Paths.get(path), StandardCharsets.UTF_8)) {
             stream.forEach(s -> contentBuilder.append(s).append("\n"));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e);
         }
         return contentBuilder.toString();
     }
