@@ -1,5 +1,6 @@
 import java.io.*;
-import java.util.ArrayList;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
@@ -11,16 +12,14 @@ public class RockScissorsPaper {
     private int userScore;
     private int computerScore;
     private int numberOfGames;
-    File f;
+    WriteRead writeRead = new WriteRead("/Users/vlad/Desktop/Hillel_HomeWork/Hillel_Homework/HomeWork_16/result.txt");
 
-    public RockScissorsPaper(){
-        f = new File("/Users/vlad/Desktop/Hillel_HomeWork/Hillel_Homework/HomeWork_16","result.txt");
+    public RockScissorsPaper() {
         user = new User();
         computer = new Computer();
         userScore = 0;
         computerScore = 0;
         numberOfGames = 0;
-
     }
 
     public void start() {
@@ -58,49 +57,15 @@ public class RockScissorsPaper {
 
         }
     }
-    private void read(File f) throws IOException {
-        FileInputStream fos = new FileInputStream (f);
-        int size = fos.available();
-        char[] chars = new char[size];
-        for (int i = 0; i < size; i++){
-           chars[i] = (char) fos.read();
-        }
-        String[] str;
-        String s = new String(chars);
-        str = s.split("%");
 
-        String s1;
-        String[] str2;
-        for (int j = 0; j < str.length; j++) {
-            s1 = str[j];
-            str2 = s1.split(" ");
-
-            for (int i = 0; i < str.length; i += 7) {
-                System.out.println("");
-                System.out.println("Name : " + str2[i]);
-                System.out.println("Count games : " + str2[i + 1]);
-                System.out.println("Wins : " + str2[i + 2]);
-                System.out.println("Loses : " + str2[i + 3]);
-                System.out.println("Ties : " + str2[i + 4]);
-                System.out.println("Wins (%) : " + str2[i + 5]);
-            }
-        }
-    }
     private void printGame() throws IOException {
         int wins = userScore;
         int losses = computerScore;
         int ties = numberOfGames - userScore - computerScore;
         double percentageWon = (wins + ((double) ties) / 2) / numberOfGames;
-        String res = user.getName() +" "+ numberOfGames +" "+ wins +" "+ computerScore +" "+ ties +" "+ percentageWon;
-        if (f.exists()){
-        FileWriter fileWriter = new FileWriter(f,true);
-        fileWriter.write(res);
-        fileWriter.write("%");
-        fileWriter.close();
-        }else {
-            f.createNewFile();
-        }
-        read(f);
+        writeRead.write(user.name,numberOfGames,wins,losses,ties,percentageWon);
+        String s =  writeRead.readToString();
+        System.out.println(s);
     }
     private class User {
         private String name;
@@ -127,12 +92,9 @@ public class RockScissorsPaper {
         private void exit(String val){
            val =  val.toUpperCase();
             if (val.equals("RESULT")){
-                try {
-                   read(f);
-                   System.exit(0);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+               String s =  writeRead.readToString();
+                System.out.println(s);
+                System.exit(0);
             }
             else
                 if (val.equals("EXIT")){

@@ -1,1 +1,22 @@
-Vlad 3 1 0 2 0.6666666666666666%Vova 3 1 1 1 0.5%andrew 3 2 1 0 0.6666666666666666%qwerty 2 1 0 1 0.75%vlada 1 0 0 1 0.5%
+
+Player oleg has played games: 5
+Your results :
+Wins: 2 Losses: 1  Ties: 
+
+Player oleg has played games: 5
+Player oleg has played games: 5
+Your results :
+Wins: 0 Losses: 3  Ties: 2 Percent: 0.2
+
+Player Oleg has played games: 6
+Your results :
+Wins: 1 Losses: 4  Ties: 1 Percent: 0.25
+
+Player qwerty has played games: 5
+Your results :
+Wins: 2 Losses: 2  Ties: 1 Percent: 0.5
+
+Player qazwsx has played games: 5
+Your results :
+Wins: 1 Losses: 2  Ties: 2 Percent: 0.4
+
