@@ -2,10 +2,10 @@ import java.sql.*;
 import java.util.Calendar;
 import java.util.Scanner;
 
-public class BD {
+public class DB {
     Connection connection;
 
-    public BD(String url) {
+    public DB(String url) {
         try {
             this.connection = DriverManager
                     .getConnection(url);
@@ -107,8 +107,7 @@ public class BD {
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("Select COUNT(*) FROM Hillel2020.students");
         resultSet.next();
-        int count = resultSet.getInt(1);
-        return count;
+        return resultSet.getInt(1);
     }
     private void printStudent(String query) throws SQLException {
         Statement statement = connection.createStatement();
