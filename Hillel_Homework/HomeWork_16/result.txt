@@ -15,3 +15,91 @@ Player qazwsx has played games: 5
 Your results :
 Wins: 1 Losses: 2  Ties: 2 Percent: 0.4
 
+Player VlaDD has played games: 4
+Your results :
+Wins: 1 Losses: 1  Ties: 2 Percent: 0,5
+
+Player AB has played games: 3
+Your results :
+Wins: 0 Losses: 1  Ties: 2 Percent: 0,33
+
+Player vlada has played games: 3
+Your results :
+Wins: 1 Losses: 0  Ties: 2 Percent: 0,67
+
+Player Alla has played games: 3
+Your results :
+Wins: 1 Losses: 2  Ties: 0 Percent: 0,33
+
+Player ella has played games: 3
+Your results :
+Wins: 0 Losses: 2  Ties: 1 Percent: 0,17
+
+Player vfr has played games: 3
+Your results :
+Wins: 0 Losses: 2  Ties: 1 Percent: 0,17
+
+Player stas has played games: 3
+Your results :
+Wins: 2 Losses: 1  Ties: 0 Percent: 0,67
+
+Player alena has played games: 1
+Your results :
+Wins: 1 Losses: 0  Ties: 0 Percent: 1
+
+Player aa has played games: 1
+Your results :
+Wins: 0 Losses: 0  Ties: 1 Percent: 0,5
+
+Player qwe has played games: 2
+Your results :
+Wins: 1 Losses: 1  Ties: 0 Percent: 0,5
+
+Player vbt has played games: 2
+Your results :
+Wins: 0 Losses: 1  Ties: 1 Percent: 0,25
+
+Player Vlad has played games: 3
+Your results :
+Wins: 2 Losses: 1  Ties: 0 Percent: 0,67
+
+Player lll has played games: 1
+Your results :
+Wins: 0 Losses: 1  Ties: 0 Percent: 0
+
+Player vlll has played games: 2
+Your results :
+Wins: 1 Losses: 0  Ties: 1 Percent: 0,75
+
+Player ffgghh has played games: 2
+Your results :
+Wins: 0 Losses: 0  Ties: 2 Percent: 0,5
+
+Player qaz has played games: 3
+Your results :
+Wins: 1 Losses: 1  Ties: 1 Percent: 0,5
+
+Player cvf has played games: 5
+Your results :
+Wins: 2 Losses: 0  Ties: 3 Percent: 0,7
+
+Player Sara has played games: 2
+Your results :
+Wins: 0 Losses: 0  Ties: 2 Percent: 0,5
+
+Player Sara has played games: 4
+Your results :
+Wins: 2 Losses: 1  Ties: 1 Percent: 0,62
+
+Player Yen has played games: 3
+Your results :
+Wins: 1 Losses: 2  Ties: 0 Percent: 0,33
+
+Player ccc has played games: 1
+Your results :
+Wins: 0 Losses: 1  Ties: 0 Percent: 0
+
+Player v has played games: 1
+Your results :
+Wins: 0 Losses: 0  Ties: 1 Percent: 0,5
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+<property name="USER_HOME" value="/Users/vlad/Desktop/Hillel_HomeWork/Hillel_Homework/HomeWork_22/src/main/resources"/>
+
+<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+        <pattern>%d{HH:mm:ss.SSS} - [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+</appender>
+
+<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>${USER_HOME}\gameInfo.log</file>
+    <encoder>
+        <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{35} - %msg%n</pattern>
+    </encoder>
+</appender>
+
+<logger name="YouWannaPlay" level="info" additivity="false">
+    <appender-ref ref="FILE"/>
+</logger>
+
+<root level="debug">
+    <appender-ref ref="STDOUT"/>
+</root>
+
+<root level="info">
+    <appender-ref ref="FILE"/>
+</root>
+</configuration>
