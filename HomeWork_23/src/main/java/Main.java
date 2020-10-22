@@ -13,8 +13,8 @@ public class Main {
         System.out.println("By name:");
         studentService.selectStudentByName("Bill Mitchell").forEach(System.out::println);
 
-        System.out.println("By Id 5: " + studentService.selectStudentById(5));
-        Group group = new Group("React");
+//        System.out.println("By Id 5: " + studentService.selectStudentById(5));
+//        Group group = new Group("React");
 
 //        Student student = new Student("Victor Barinov", new Group("React"),2020);
 //        student.addMark(new Mark(new Lesson("UI/UX",2,2020,new Lecturer("Luis Hall2",

@@ -1,9 +1,12 @@
 package Entity;
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@NoArgsConstructor
 @Entity
 @Table(name = "groups")
 public class Group {
@@ -15,11 +18,9 @@ public class Group {
     @Column(name = "groupa")
     private String group;
 
-    @OneToMany
+    @OneToMany(mappedBy = "id_group", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     private List<Student> students;
 
-    public Group() {
-    }
 
     public Group(String group) {
         this.group = group;

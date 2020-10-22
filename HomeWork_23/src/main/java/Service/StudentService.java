@@ -1,6 +1,7 @@
 package Service;
 
 import DAO.StudentDAO;
+import Entity.Group;
 import Entity.Student;
 
 import java.util.List;
@@ -11,7 +12,9 @@ public class StudentService {
     public List<Student> selectAllStudents() {
         return studentDAO.selectAllStudents();
     }
-
+    public List<Group> selectAllGroup() {
+        return studentDAO.selectAllGroup();
+    }
     public Student selectStudentById(long id){
         return studentDAO.selectByID(id);
     }

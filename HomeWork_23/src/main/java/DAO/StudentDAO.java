@@ -1,5 +1,6 @@
 package DAO;
 
+import Entity.Group;
 import Entity.Student;
 import Util.HibernateUtil;
 import org.hibernate.Session;
@@ -9,11 +10,17 @@ import java.util.List;
 
 public class StudentDAO implements StudentFunc{
     List<Student> students;
+    List<Group> group;
     @Override
     public List<Student> selectAllStudents() {
         students = (List<Student>) HibernateUtil.getSessionFactory().openSession().createQuery("From Student").list();
         return students;
     }
+    public List<Group> selectAllGroup() {
+        group = (List<Group>) HibernateUtil.getSessionFactory().openSession().createQuery("From Group").list();
+        return group;
+    }
+
     @Override
     public void delete(Student student) {
         Session session = HibernateUtil.getSessionFactory().openSession();

@@ -14,4 +14,5 @@ public interface StudentFunc {
     void addStudent(Student student);
 
     void delete(Student student);
+
 }

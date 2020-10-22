@@ -9,7 +9,7 @@ import java.util.List;
 public class Lesson {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
     @Column(nullable = false)
     private String lesson;
@@ -28,7 +28,9 @@ public class Lesson {
 
     }
 
-
+    public Long getId() {
+        return id;
+    }
     public void addMark(Mark mark) {
         mark.setLesson(this);
         marks.add(mark);
@@ -79,13 +81,13 @@ public class Lesson {
         this.year = year;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Lesson{" +
-//                "id=" + id +
-//                ", lesson='" + lesson + '\'' +
-//                ", semester=" + semester +
-//                ", year=" + year +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "Lesson{" +
+                "id=" + id +
+                ", lesson='" + lesson + '\'' +
+                ", semester=" + semester +
+                ", year=" + year +
+                '}';
+    }
 }
