@@ -1,6 +1,6 @@
-package Service;
+package Service.Student;
 
-import DAO.StudentDAO;
+import DAO.Student.StudentDAO;
 import Entity.Group;
 import Entity.Student;
 
@@ -23,11 +23,8 @@ public class StudentService {
         return studentDAO.selectByName(name);
     }
 
-    public void deleteStudent(Student student){
-        studentDAO.delete(student);
-    }
-
     public void addStudent(Student student){
         studentDAO.addStudent(student);
     }
+
 }

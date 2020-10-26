@@ -9,7 +9,7 @@
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 
 
-        <property name="connection.url">jdbc:mysql://localhost:3306/Hillel2020?serverTimezone=UTC</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/Test?serverTimezone=UTC</property>
         <property name="connection.username">root</property>
         <property name="connection.password">123456789</property>
 

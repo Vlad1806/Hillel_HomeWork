@@ -1,4 +1,4 @@
-package DAO;
+package DAO.Student;
 
 import Entity.Student;
 
@@ -12,7 +12,4 @@ public interface StudentFunc {
     List<Student> selectByName(String studentName);
 
     void addStudent(Student student);
-
-    void delete(Student student);
-
 }

@@ -70,10 +70,10 @@ public class Lecturer {
     }
 
 //    @Override
-//    public String toString() {
-//        return "Lecturer{" +
-//                "id=" + id +
-//                ", name='" + name + '\'' +
-//                '}';
-//    }
+    public String toString() {
+        return "Lecturer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

@@ -15,10 +15,10 @@ public class Mark {
     @JoinColumn(name = "id_lesson",nullable = false)
     private Lesson lesson;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_student",nullable = false)
-    private Student student;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_student", nullable = false)
+    private Student student;
     private int mark;
 
 
@@ -59,11 +59,11 @@ public class Mark {
         this.mark = mark;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Mark{" +
-//                "id=" + id +
-//                ", mark=" + mark +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "Mark{" +
+                "id=" + id +
+                ", mark=" + mark +
+                '}';
+    }
 }

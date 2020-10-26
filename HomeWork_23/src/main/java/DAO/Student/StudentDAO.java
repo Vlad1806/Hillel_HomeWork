@@ -1,4 +1,4 @@
-package DAO;
+package DAO.Student;
 
 import Entity.Group;
 import Entity.Student;
@@ -8,7 +8,7 @@ import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class StudentDAO implements StudentFunc{
+public class StudentDAO implements StudentFunc {
     List<Student> students;
     List<Group> group;
     @Override
@@ -19,15 +19,6 @@ public class StudentDAO implements StudentFunc{
     public List<Group> selectAllGroup() {
         group = (List<Group>) HibernateUtil.getSessionFactory().openSession().createQuery("From Group").list();
         return group;
-    }
-
-    @Override
-    public void delete(Student student) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction tx1 = session.beginTransaction();
-        session.delete(session);
-        tx1.commit();
-        session.close();
     }
     @Override
     public Student selectByID(long studentId) {
