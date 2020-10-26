@@ -66,12 +66,12 @@ public class Department {
         this.lecturers = lecturers;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Department{" +
-//                "id=" + id +
-//                ", name of department='" + name + '\'' +
-//                ", head='" + head + '\'' +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "Department{" +
+                "id=" + id +
+                ", name of department='" + name + '\'' +
+                ", head='" + head + '\'' +
+                '}';
+    }
 }
